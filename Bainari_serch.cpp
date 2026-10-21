@@ -12,7 +12,7 @@ int main()
     while (i < j)
     {
         int med = (i + j )/ 2;
-        if (arr[med] < target)
+        if (arr[med] <= target)
         {
             i = med + 1;
         }
