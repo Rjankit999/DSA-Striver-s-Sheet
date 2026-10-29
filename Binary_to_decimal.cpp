@@ -1,14 +1,16 @@
 #include <iostream>
-#include<cmath>
+#include <cmath>
 using namespace std;
-
 
 int main()
 {
-    int n = 55;
+    int n = 636;
     int ans = 0;
     int power = 1;
-   
+    int copli=0;
+      if(n==0){
+        return 1;
+    }
     while (n != 0)
     {
         int rem = n % 2;
@@ -26,15 +28,20 @@ int main()
         n = n / 2;
         power = power * 10;
     }
-    cout<<ans<<endl;
-     int i=0;
-    while (ans!=0)
+  
+    int i = 0;
+    int pow = 1;
+    while (ans != 0) // 1 0 1
     {
-        int rem=ans%10;
-        
-        ans=ans/10;
-    }
-    cout<<1000%10;
+        int rem = ans % 10;
+        copli += rem * pow;
+        pow *= 2;
 
+        ans = ans / 10;
+        i++;
+    }
+    cout << copli<<endl;
+   
     
+
 }
