@@ -1,16 +1,11 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-int main()
+void p(string a, int i = 0, int j)
 {
-    string a = "ABCBA";
-
-    int i = 0;
-    int j = a.size() - 1;
     bool flage = true;
-    while (i <= j)
-    {
+    if(i <= j){
+        return;
+    }
         if (a[i] != a[j])
         {
             flage = false;
@@ -19,11 +14,8 @@ int main()
         else
         {
             flage = true;
-
-            
         }
         i++, j--;
-    }
     if (flage == true)
     {
         cout << "String  is Palindrom";
@@ -32,4 +24,11 @@ int main()
     {
         cout << "String  is not Palindrom";
     }
+}
+int main()
+{
+    string a = "ABCBA";
+    int i = 0;
+    int j = a.size() - 1;
+    p(a, i, j);
 }
