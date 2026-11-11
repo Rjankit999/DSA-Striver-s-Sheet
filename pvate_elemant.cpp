@@ -3,22 +3,23 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums = {-10, -20, -30, -40};
+    vector<int> nums = {10, 10};
 
     int largest = nums[0];
-    int secondlargest;
+    int secondlargest = -1;
     for (int i = 0; i < nums.size(); i++)
     {
         if (largest < nums[i])
-        {   secondlargest=largest;
+        {
+            secondlargest = largest;
             largest = nums[i];
         }
-        else if(largest > nums[i] && secondlargest < nums[i])
+        else if (largest > nums[i] && secondlargest < nums[i])
         {
             secondlargest = nums[i];
         }
     }
-    cout<<largest<<endl;
+    cout << largest << endl;
 
-    cout<<secondlargest;
+    cout << secondlargest;
 }
