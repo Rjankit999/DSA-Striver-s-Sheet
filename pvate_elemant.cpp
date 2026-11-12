@@ -3,23 +3,27 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums = {10, 10};
+    vector<int> arr = {10, 5, 10};
 
-    int largest = nums[0];
-    int secondlargest = -1;
-    for (int i = 0; i < nums.size(); i++)
+    int first, second;
+
+    first = arr[0];
+    second = -1;
+
+    for (int i = 0; i < arr.size(); i++)
     {
-        if (largest < nums[i])
+
+        if (first < arr[i])
         {
-            secondlargest = largest;
-            largest = nums[i];
+
+            second = first;
+
+            first = arr[i];
         }
-        else if (largest > nums[i] && secondlargest < nums[i])
+        else if (first > arr[i] && arr[i]  > second)
         {
-            secondlargest = nums[i];
+            second = arr[i];
         }
     }
-    cout << largest << endl;
-
-    cout << secondlargest;
+    cout<< second;
 }
