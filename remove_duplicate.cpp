@@ -4,16 +4,19 @@ int main()
 {
     vector<int> nums = {1, 1, 2, 2, 4, 4, 5, 5, 7, 7, 8};
     set<int> s;
-    for (int i = 0; i < nums.size(); i++)
+    int k=0;
+    for (int i = 0; i < nums.size()-1; i++)
     {
-        s.insert(nums[i]);
-        nums
+        if(nums[i]!=nums[i+1]){
+            nums[k+1]=nums[i];
+            k++;
+        }
     }
-    int k= s.size();
 
-  
-    for (int x : s)
+        nums[k+1]=nums[nums.size()-1];
+    for (int i = 0; i < k; i++)
     {
-        cout << x <<",";
+       cout<<nums[i]<<",";
     }
+
 }

@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    vector<int> nums = {1, 4, 5, 6, 7, 8, 90};
+    vector<int> nums = {90,1, 4, 5, 6, 7, 8, };
     bool flag = true;
     for (int i = 0; i < nums.size(); i++)
     {
@@ -15,7 +15,8 @@ int main()
             flag = false;
             break;
         }
-        if (flag == true)
+    }
+     if (flag == true)
         {
             cout << "Array is shoted";
         }
@@ -23,5 +24,4 @@ int main()
         {
             cout << "Array is not shoted";
         }
-    }
 }
