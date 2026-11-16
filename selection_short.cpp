@@ -1,31 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int min(){
-    
+void selection_short(vector<int> &nums, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        int min = i;
+        for (int j = i+1; j < n; j++)
+        {
+            if (nums[j] < nums[min])
+            {
+                min = j;
+            }
+        }
+        int temp = nums[i];
+        nums[i] = nums[min];
+        nums[min] = temp;
+    }
 }
 
 int main()
 {
     vector<int> nums = {4, 5, 9, 45, 12, 3, 6, 5, 71};
     int n = nums.size();
-    
 
-    for (int i = 0; i < n - 1; i++)
-    {
-        int min = INT_MAX;
-        for (int j = i; j < n; j++)
-        {
-            if (min > nums[j])
-            {
-                min = nums[j];
-            }
-        }
+    selection_short(nums, n);
 
-        int temp = nums[i];
-        nums[i] = min;
-        min = temp;
-    }
     for (int x : nums)
     {
         cout << x << ",";
